@@ -1,0 +1,623 @@
+@import 'vars';
+@import 'fonts';
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    // min-width: 320px;
+    overflow-x: hidden;
+    font-family: $Proxima;
+    padding: 10px 10px 0 10px;
+}
+
+.header {
+    margin: 0 auto;
+    background-color: $mainColor;
+    border-radius: 10px 10px 0 0;
+    &__container {
+        padding: 15px;
+    }
+    &__mobile {
+        min-height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__desktop {
+        display: none;
+    }
+}
+// @media (min-width: 768px) {
+//     .header{
+//         &__mobile {
+//             display: none;
+//         }
+//         &__desktop {
+//             display: block;
+//         }
+//     }
+// }
+
+.menu {
+    &__mobile {
+        padding-top: 15px;
+    }
+    &__mobile-btn {
+        width: 45px;
+        height: 39px;
+        background-color: $mainColor;
+        border: none;
+        position: relative;
+        margin-right: 10px;
+        &::after {
+            content: "";
+            width: 25px;
+            height: 3px;
+            background-color: $white;
+            position: absolute;
+            top: 9px;
+            left: 10px;
+            box-shadow: 0 9px 0 0 $white, 0 18px 0 0 $white;
+        }
+    }
+    &__mobile-tel {
+        display: flex;
+        float: left;
+    }
+}
+
+.hero {
+    padding: 0 15px;
+    background: linear-gradient(180deg, rgba(0, 27, 81, 0) 0%, #001B51 100%),
+    url(../img/bg_mobile_hero.svg) 0 100% no-repeat,
+    url(../img/bg_mobile_hero_2.svg) 0 100% no-repeat,
+    $mainColor;
+    background-size: 100%, 100%;
+    border-radius: 0 0 10px 10px;
+    &__title {
+        font-family: $Proxima;
+        padding-top: 60px;
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 35px;
+        color: $white;
+        max-width: 270px;
+    }
+    &__text {
+        // width: 245px;
+        font-family: $Proxima;
+        padding: 15px 0 35px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: $white;
+        max-width: 270px;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+    }
+    &__item {
+        width: calc(50% - 5px);
+        padding: 10px;
+        height: 135px;
+        border: 1.25px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        margin-bottom: 10px;
+        &-text {
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 16px;
+            color: $white;
+        }
+        &-img {
+            width: 30px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.advantages {
+    padding: 0 5px;
+    margin: 0 auto;
+    &__title {
+        color: $mainColor;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 35px;
+        font-family: $Proxima;
+        margin-top: 50px;
+    }
+    &__text {
+        color: black;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 15px 0 25px;
+    }
+    &__item {
+        width: 245px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-bottom: 10px;
+        &-svg {
+            width: 71px;
+            height: 71px;
+            margin-right: 15px;
+        }
+        &-img {
+            color: white;
+            margin-right: 15px;
+        }
+        &-text {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            color: $mainColor;
+        }
+    }
+}
+
+.contact {
+    margin-top: 50px;
+    &__inner {
+        background: linear-gradient(180deg, #164094 0%, #19408d 40%, rgba(22, 64, 148, 0) 100%),
+        url(../img/contact_bg.svg) 0% 100% no-repeat,
+        $mainColor;
+        border-radius: 15px;
+        &-container {
+            width: 270px;
+            margin: 0 auto;
+        }
+    }
+    &__img {
+        margin-top: 40px;
+        width: 49px;
+        height: 70px;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        margin: 25px 0 10px;
+        color: $white
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $white;
+        padding-bottom: 25px;
+    }
+    &__button {
+        margin: 0 auto;
+        margin-bottom: 37px;
+        border-radius: 15px;
+        padding: 15px;
+        background-color: $white;
+        &-inner {
+            display: flex;
+            align-items: center;
+        }
+        &-img {
+            width: 25px;
+        }
+        &-text {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            color: $mainColor;
+            padding-left: 10px;
+        }
+    }
+}
+
+.areas {
+    margin-top: 50px;
+    &__title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 35px;
+        color: $mainColor;
+    }
+    &__item {
+        margin-top: 15px;
+        border-radius: 15px;
+        height: 200px;
+        &-inner {
+            width: 260px;
+            margin: 0 auto;
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 26px;
+            color: $white;
+            padding-top: 21px;
+        }
+        &-text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: $white;
+            padding-top: 10px;
+        }
+        // ==================================
+    }
+    &__item:first-of-type {
+        height: 305px;
+        background: linear-gradient(180deg, #164094 0%, rgba(22, 64, 148, 0) 100%),
+        url(../img/areas_item1.svg) 0% 100% no-repeat,
+        $mainColor;
+        background-size: 100% auto;
+    }
+    &__item-title:first-of-type {
+        padding-top: 25px;
+    }
+    &__item:nth-of-type(2) {
+        background: linear-gradient(180deg, #164094 0%, rgba(22, 64, 148, 0) 100%),
+        url(../img/areas_item2.svg) 0% 100% no-repeat,
+        $mainColor;
+        background-size: 100% auto
+    }
+    &__item:nth-of-type(3) {
+        background: linear-gradient(180deg, #164094 0%, rgba(22, 64, 148, 0) 100%),
+        url(../img/areas_item3.svg) 0% 100% no-repeat,
+        $mainColor;
+        background-size: 100% auto
+    }
+    &__item:nth-of-type(4) {
+        background: linear-gradient(180deg, #164094 0%, rgba(22, 64, 148, 0) 100%),
+        url(../img/areas_item4.svg) 0% 100% no-repeat,
+        $mainColor;
+        background-size: 100% auto
+    }
+    &__item:nth-of-type(5) {
+        background: linear-gradient(180deg, #164094 0%, rgba(22, 64, 148, 0) 100%),
+        url(../img/areas_item5.svg) 0% 100% no-repeat,
+        $mainColor;
+        background-size: 100% auto
+    }
+}
+
+.services {
+    margin-top: 50px;
+    background-color: #FAFAFA;
+    &__inner {
+        padding: 50px 0;
+    }
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 35px;
+        color: $mainColor;
+        margin-bottom: 25px;
+    }
+    &__items {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -ms-overflow-style: none;  
+        scrollbar-width: none;
+    }
+    &__items::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+    &__item {
+        margin-left: 15px;
+        max-width: 275px;
+        max-height: 250px;
+        flex: 0 0 auto;
+        border: 1px solid #EEEEEE;
+        border-radius: 20px;
+        background: $white;
+        &:last-of-type {
+            margin-right: 15px;
+        }
+        &-inner {
+            padding: 15px;
+        }
+        &-img {
+            width: 65px;
+            height: 65px;
+        }
+        &-title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            color: black;
+            padding: 15px 0 10px;
+        }
+        &-text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+    &__button {
+        display: block;
+        margin: 0 auto;
+        border-radius: 15px;
+        padding: 15px 25px;
+        background-color: $mainColor;
+        &-inner {
+            display: flex;
+            align-items: center;
+        }
+        &-img {
+            width: 25px;
+        }
+        &-text {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            color: $white;
+            padding-left: 10px;
+        }
+    }
+}
+
+.application {
+    margin-top: 50px;
+    &__inner {
+        background-color: $mainColor;
+        border-radius: 15px;
+        padding: 50px 10px 10px 10px;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+        color: $white;
+        padding-top: 50px;
+    }
+    &__text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 15px 0 25px;
+        color: $white;
+    }
+}
+
+.form {
+    &__inner {
+    width: 270px;
+    margin: 0 auto;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 15px;
+    }
+    &__button {
+        margin-top: 35px;
+        background-color: $mainColor;
+        border-radius: 15px;
+        &-text {
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            padding: 13.5px 15px;
+            color: $white;
+        }
+    }
+}
+
+.contacts-form {
+    &__item {
+        &:not(:first-of-type) {
+            margin-top: 15px;
+        }
+    }
+    &__label {
+        display: block;
+        padding-bottom: 5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $mainColor;
+    }
+    &__input {
+        width: 240px;
+        height: 55px;
+        padding: 18px 15px;
+        border: 1px solid $mainColor;
+        border-radius: 15px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        outline: none;
+    }
+}
+
+.connection {
+    &__title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $mainColor;
+        padding: 15px 0 10px;
+    }
+    &__button {
+        background-color: $white;
+        margin-bottom: 5px;
+        &-inner {
+            padding: 18px 15px;
+            width: 240px;
+            display: flex;
+            align-items: center;
+            background-color: $white;
+            border: 1px solid $mainColor;
+            border-radius: 15px;
+        }
+        &-img {
+            width: 20px;
+            height: 20px;
+        }
+        &-text{
+            padding-left: 10px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: $mainColor;
+        }
+        &-active {
+            background-color: $mainColor;
+            & > .connection__button-text {
+                color: $white
+            }
+        }
+    }
+}
+
+.country {
+    &__title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $mainColor;
+        padding: 10px 0;
+    }
+    &__inner {
+        max-width: 240px;
+        flex-wrap: wrap;
+        padding: 15px;
+        border: 1px solid $mainColor;
+        border-radius: 15px;
+        display: flex;
+    }
+    &__checkbox {
+        width: 100px;
+        display: flex;
+        align-items: center;
+        &:last-of-type {
+            width: 210px;
+        }
+        &-input {
+            width: 15px;
+            height: 15px;
+            background-color: $white;
+            border: 1px solid #CCCDCC;
+            border-radius: 3.75px;
+        }
+        &-label {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #626262;
+            padding-left: 5px;
+        }
+    }
+}
+
+.comment {
+    &__title {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: $mainColor;
+        padding: 15px 0 10px;
+    }
+    &__textarea {
+        color: #626262;
+        padding: 15px 15px 77px 15px;
+        width: 240px;
+        border: 1px solid $mainColor;
+        border-radius: 15px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #626262;
+    }
+}
+
+.privacy {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    &__input {
+        width: 15px;
+        height: 15px;
+    }
+    &__label {
+        padding-left: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: black;
+        & > span {
+            color: $mainColor;
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer {
+    background-color: $mainColor;
+    margin-top: 50px;
+    &__inner {
+        padding: 25px 15px 15px 15px;
+    }
+    &__contacts {
+        padding-top: 25px;
+        &-inner {
+            display: flex;
+            align-items: center;
+        }
+        &-img {
+            width: 25px;
+            height: 25px;
+        }
+        &-text {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #EDEEED;
+            margin-bottom: 10px;
+        }
+        &-span {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            color: $white;
+        }
+    }
+    &__networks {
+        &-img {
+            width: 35px;
+            height: 35px;
+            margin: 5px 0 25px;
+        }
+    }
+    &__line {
+        display: block;
+        border-bottom: 1px solid #F9F9F9;
+        opacity: 0.15;
+        margin-top: 25px;
+    }
+    &__texts {
+        margin-top: 5px 0 15px;
+    }
+    &__text {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        margin-top: 10px;
+        color: $white;
+        &:first-of-type {
+            margin-top: 15px;
+        }
+    }
+}
